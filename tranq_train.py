@@ -3,6 +3,8 @@ import os
 
 from slugify import slugify
 
+from shared.init_activities import initialization_activities
+
 
 def __train(name: str | None, epochs: int, batch_size: int, data_dir: str, data_limit: int, grayscale: bool):
     import torch
@@ -14,6 +16,8 @@ def __train(name: str | None, epochs: int, batch_size: int, data_dir: str, data_
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}.")
     print()
+
+    initialization_activities()
 
     ch = 1 if grayscale else 3
     model = DnCNN(in_channels=ch, out_channels=ch)

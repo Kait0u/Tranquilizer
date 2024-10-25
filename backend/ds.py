@@ -8,7 +8,7 @@ from torch.utils.data import Dataset, DataLoader
 
 
 class DenoisingDataset(Dataset):
-    def __init__(self, folder_path, gsc=False, noise_level=25, limit=0):
+    def __init__(self, folder_path, gsc=False, noise_level=25, limit=0, resid=False):
         self.folder_path = folder_path
         self.noise_level = noise_level
         self.image_files = [
@@ -35,4 +35,9 @@ class DenoisingDataset(Dataset):
         noise = torch.randn(image.size()) * (self.noise_level / 255.0)
         noisy_image = torch.clamp(image + noise, 0.0, 1.0)  # Clip to [0, 1]
 
-        return noisy_image, image
+        # transforms.ToPILImage()(noisy_image).show()
+        # transforms.ToPILImage()(noise).show()
+        # transforms.ToPILImage()(noisy_image - noise).show() - this is how to denoise an image
+        # input()
+
+        return noisy_image, noise

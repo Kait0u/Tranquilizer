@@ -26,15 +26,15 @@ def __denoise_rgb(model: nn.Module, input_image: Image.Image, device) -> tuple[I
 
     # Perform denoising
     with torch.no_grad():
-        denoised_image = model(input_tensor)
+        residual_image = model(input_tensor)
 
     # Compute residual noise
-    residual_noise = input_tensor - denoised_image
+    denoised_image = input_tensor - residual_image
 
     # Convert tensors to numpy for plotting
     input_image_np = input_tensor.squeeze().cpu().numpy().transpose(1, 2, 0).clip(0, 1)
     denoised_image_np = denoised_image.squeeze().cpu().numpy().transpose(1, 2, 0).clip(0, 1)
-    residual_noise_np = residual_noise.squeeze().cpu().numpy().transpose(1, 2, 0).clip(0, 1)
+    residual_noise_np = residual_image.squeeze().cpu().numpy().transpose(1, 2, 0).clip(0, 1)
 
     img_denoised = Image.fromarray((denoised_image_np * 255).astype(np.uint8))
 
@@ -68,7 +68,7 @@ def __denoise_rgb(model: nn.Module, input_image: Image.Image, device) -> tuple[I
 
 def __denoise_gsc(model: nn.Module, input_image: Image.Image, device) -> tuple[Image.Image, Image.Image]:
     input_image = input_image.convert("RGB")
-    input_image_channels = list(map(lambda im: im.convert("L"), input_image.split()))
+    input_image_channels = list(map(lambda im: im.convert("L"), [input_image.getchannel(ch) for ch in "RGB"]))
     output_images = []
 
     plt.figure(figsize=(15, 15))
@@ -82,10 +82,10 @@ def __denoise_gsc(model: nn.Module, input_image: Image.Image, device) -> tuple[I
 
         # Perform denoising
         with torch.no_grad():
-            denoised_image = model(input_tensor)
+            residual_image = model(input_tensor)
 
         # Compute residual noise
-        residual_noise = input_tensor - denoised_image
+        denoised_image = input_tensor - residual_image
 
         # Convert tensors to numpy for plotting
         input_image_np = input_tensor.squeeze().cpu().numpy().clip(0, 1)
@@ -93,7 +93,7 @@ def __denoise_gsc(model: nn.Module, input_image: Image.Image, device) -> tuple[I
         denoised_image_np = denoised_image.squeeze().cpu().numpy().clip(0, 1)
         output_images.append(denoised_image_np)
 
-        residual_noise_np = residual_noise.squeeze().cpu().numpy().clip(0, 1)
+        residual_noise_np = residual_image.squeeze().cpu().numpy().clip(0, 1)
 
         # Create details
         plt.subplot(4, 3, idx)

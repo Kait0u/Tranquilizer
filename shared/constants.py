@@ -20,4 +20,10 @@ COPYRIGHT_MESSAGE = "By Jakub Jaworski (Kait0u), October 2024"
 MODELS_DIRECTORY_PATH: Path = Path("./models")
 ICON_PATH: Path = Path("./assets/icon.png")
 
+# Initialization constants
+DIRS_TO_ENSURE = [
+    "./models/rgb",
+    "./models/gsc",
+]
+
 
