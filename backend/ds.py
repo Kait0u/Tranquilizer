@@ -8,7 +8,7 @@ from torch.utils.data import Dataset, DataLoader
 
 
 class DenoisingDataset(Dataset):
-    def __init__(self, folder_path, gsc=False, noise_level=25, limit=0, resid=False):
+    def __init__(self, folder_path, gsc=False, noise_level=25, limit=0):
         self.folder_path = folder_path
         self.noise_level = noise_level
         self.image_files = [

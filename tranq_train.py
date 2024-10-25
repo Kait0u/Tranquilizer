@@ -24,7 +24,7 @@ def __train(name: str | None, epochs: int, batch_size: int, data_dir: str, data_
     model.to(device)
 
     dataset = DenoisingDataset(data_dir, noise_level=25, limit=data_limit, gsc=grayscale)
-    dataloader = DataLoader(dataset, batch_size=batch_size)
+    dataloader = DataLoader(dataset, batch_size=batch_size, num_workers=4)
 
     train_dncnn(
         model=model,
