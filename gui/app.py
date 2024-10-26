@@ -215,6 +215,7 @@ class MainWindow(QMainWindow):
         for f in path_to_dir.iterdir():
             if f.is_file() and f.name.endswith(".pth"):
                 files.append(f)
+        files.sort(key=lambda model_file: model_file.stat().st_mtime, reverse=True)
         return files
 
     def _load_model(self):

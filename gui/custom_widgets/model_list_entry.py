@@ -46,7 +46,7 @@ class ModelListEntry(QWidget):
         super(ModelListEntry, self).__init__(parent)
 
         self._path_to_model = model_path
-        mode, name, epochs = ModelListEntry._parse_filename(model_path)
+        mode, name, epochs, is_checkpoint = ModelListEntry._parse_filename(model_path)
 
         layout = QHBoxLayout(self)
 
@@ -69,7 +69,7 @@ class ModelListEntry(QWidget):
         text_layout.addWidget(upper_label)
 
         # Lower text (regular)
-        lower_label = QLabel(f"Epochs: {epochs}, Mode: {mode.name}")
+        lower_label = QLabel(f"Epochs: {epochs}, Mode: {mode.name}" + (" | (checkpoint)" if is_checkpoint else ""))
         text_layout.addWidget(lower_label)
 
         # Align the layout properly
@@ -81,7 +81,7 @@ class ModelListEntry(QWidget):
         return self._path_to_model
 
     @staticmethod
-    def _parse_filename(filename) -> tuple[constants.ModelCategory, str, int] | None:
+    def _parse_filename(filename) -> tuple[constants.ModelCategory, str, int, bool] | None:
         filename = Path(filename).name
         pattern = r"(gsc|rgb)_(.*)_(\d*)e\.pth"
         pattern_match = re.match(pattern, filename)
@@ -90,5 +90,6 @@ class ModelListEntry(QWidget):
             mode = constants.ModelCategory.GSC if mode_str == "gsc" else constants.ModelCategory.RGB
             name = pattern_match.group(2)
             epochs = int(pattern_match.group(3))
-            return mode, name, epochs
+            is_checkpoint = "-cp" in name
+            return mode, name, epochs, is_checkpoint
         return None
