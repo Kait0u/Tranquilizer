@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>Tranquilizer.shared.constants</title>
+    <meta name="generator" content="pydoctor 24.3.3"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          Tranquilizer <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="search-help-button" title="Help" onclick="toggleSearchHelpText()"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div class="hint" id="search-help-box">
+          <p class="rst-last">
+      
+            Search bar offers the following options:
+            <ul>   
+                <li>
+                  <strong>Term presence.</strong> The below example searches for documents that 
+                    must contain “foo”, might contain “bar” and must not contain “baz”: <code>+foo bar -baz</code>
+                </li> 
+
+                <li>
+                  <strong>Wildcards.</strong> The below example searches for documents with words beginning with “foo”: <code>foo*</code>
+                </li> 
+
+                <li>
+                  <strong>Search in specific fields.</strong> The following search matches all objects 
+                  in "twisted.mail" that matches “search”: <code>+qname:twisted.mail.* +search</code>
+
+                  <p>
+                    Possible fields: 'name', 'qname' (fully qualified name), 'docstring', and 'kind'.
+                    Last two fields are only applicable if "search in docstrings" is enabled.
+                  </p>
+                </li>
+
+                <li>
+                  <strong>Fuzzy matches.</strong> The following search matches all documents 
+                  that have a word within 1 edit distance of “foo”: <code>foo~1</code>
+                </li>
+            </ul>
+
+          </p>
+        </div>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 8px;">
+          <p>Results provided by <a href="https://lunrjs.com">Lunr.js</a></p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code class="thisobject"><a href="Tranquilizer.shared.constants.html" class="internal-link" title="This module">constants</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="Tranquilizer.shared.constants.ModelCategory.html" class="internal-link" title="Tranquilizer.shared.constants.ModelCategory"><wbr></wbr>Model<wbr></wbr>Category</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        
+         
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#APP_NAME" class="internal-link" title="Tranquilizer.shared.constants.APP_NAME">APP<wbr></wbr>_NAME</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#COPYRIGHT_MESSAGE" class="internal-link" title="Tranquilizer.shared.constants.COPYRIGHT_MESSAGE">COPYRIGHT<wbr></wbr>_MESSAGE</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#DIRS_TO_ENSURE" class="internal-link" title="Tranquilizer.shared.constants.DIRS_TO_ENSURE">DIRS<wbr></wbr>_TO<wbr></wbr>_ENSURE</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#ICON_PATH" class="internal-link" title="Tranquilizer.shared.constants.ICON_PATH">ICON<wbr></wbr>_PATH</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#MODELS_DIRECTORY_PATH" class="internal-link" title="Tranquilizer.shared.constants.MODELS_DIRECTORY_PATH">MODELS<wbr></wbr>_DIRECTORY<wbr></wbr>_PATH</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#WINDOW_HEIGHT" class="internal-link" title="Tranquilizer.shared.constants.WINDOW_HEIGHT">WINDOW<wbr></wbr>_HEIGHT</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#WINDOW_WIDTH" class="internal-link" title="Tranquilizer.shared.constants.WINDOW_WIDTH">WINDOW<wbr></wbr>_WIDTH</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Package</span>
+        <code><a href="Tranquilizer.shared.html" class="internal-link" title="The parent of this module">shared</a></code> 
+      </div>
+      
+      <div>
+        
+
+        <div class="childrenKindTitle">Modules</div>
+        <ul>
+    
+    <li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="Tranquilizer.shared.constants.html" class="internal-link" title="Tranquilizer.shared.constants">constants</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="Tranquilizer.shared.init_activities.html" class="internal-link" title="Tranquilizer.shared.init_activities">init<wbr></wbr>_activities</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+        
+
+        
+         
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="module"><code><code><a href="index.html" class="internal-link">Tranquilizer</a></code><wbr></wbr>.<code><a href="Tranquilizer.shared.html" class="internal-link" title="Tranquilizer.shared">shared</a></code><wbr></wbr>.<code><a href="Tranquilizer.shared.constants.html" class="internal-link" title="Tranquilizer.shared.constants">constants</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          module documentation
+        </div>
+
+        <div class="extrasDocstring">
+          
+          <p></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p class="undocumented">Undocumented</p></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id26">
+  
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="Tranquilizer.shared.constants.ModelCategory.html" class="internal-link" title="Tranquilizer.shared.constants.ModelCategory"><wbr></wbr>Model<wbr></wbr>Category</a></code></td>
+    <td>Contains the model category (mode) names.</td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#APP_NAME" class="internal-link" title="Tranquilizer.shared.constants.APP_NAME">APP<wbr></wbr>_NAME</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#COPYRIGHT_MESSAGE" class="internal-link" title="Tranquilizer.shared.constants.COPYRIGHT_MESSAGE">COPYRIGHT<wbr></wbr>_MESSAGE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#DIRS_TO_ENSURE" class="internal-link" title="Tranquilizer.shared.constants.DIRS_TO_ENSURE">DIRS<wbr></wbr>_TO<wbr></wbr>_ENSURE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#ICON_PATH" class="internal-link" title="Tranquilizer.shared.constants.ICON_PATH">ICON<wbr></wbr>_PATH</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#MODELS_DIRECTORY_PATH" class="internal-link" title="Tranquilizer.shared.constants.MODELS_DIRECTORY_PATH">MODELS<wbr></wbr>_DIRECTORY<wbr></wbr>_PATH</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#WINDOW_HEIGHT" class="internal-link" title="Tranquilizer.shared.constants.WINDOW_HEIGHT">WINDOW<wbr></wbr>_HEIGHT</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant">
+    
+    <td>Constant</td>
+    <td><code><a href="#WINDOW_WIDTH" class="internal-link" title="Tranquilizer.shared.constants.WINDOW_WIDTH">WINDOW<wbr></wbr>_WIDTH</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="baseconstant">
+  
+  
+  <a name="Tranquilizer.shared.constants.APP_NAME">
+    
+  </a>
+  <a name="APP_NAME">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">APP_NAME</span>: <code>str</code> =
+    
+    <a class="headerLink" href="#APP_NAME" title="Tranquilizer.shared.constants.APP_NAME">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">Tranquilizer</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="Tranquilizer.shared.constants.COPYRIGHT_MESSAGE">
+    
+  </a>
+  <a name="COPYRIGHT_MESSAGE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">COPYRIGHT_MESSAGE</span>: <code>str</code> =
+    
+    <a class="headerLink" href="#COPYRIGHT_MESSAGE" title="Tranquilizer.shared.constants.COPYRIGHT_MESSAGE">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">By Jakub Jaworski (Kait0u), October 2024</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="Tranquilizer.shared.constants.DIRS_TO_ENSURE">
+    
+  </a>
+  <a name="DIRS_TO_ENSURE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">DIRS_TO_ENSURE</span>: <code>list[<wbr></wbr>str]</code> =
+    
+    <a class="headerLink" href="#DIRS_TO_ENSURE" title="Tranquilizer.shared.constants.DIRS_TO_ENSURE">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>[<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">./models/rgb</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">./models/gsc</span><span class="rst-variable-quote">'</span>]</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="Tranquilizer.shared.constants.ICON_PATH">
+    
+  </a>
+  <a name="ICON_PATH">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ICON_PATH</span>: <code>Path</code> =
+    
+    <a class="headerLink" href="#ICON_PATH" title="Tranquilizer.shared.constants.ICON_PATH">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>Path(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">./assets/icon.png</span><span class="rst-variable-quote">'</span>)</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="Tranquilizer.shared.constants.MODELS_DIRECTORY_PATH">
+    
+  </a>
+  <a name="MODELS_DIRECTORY_PATH">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">MODELS_DIRECTORY_PATH</span>: <code>Path</code> =
+    
+    <a class="headerLink" href="#MODELS_DIRECTORY_PATH" title="Tranquilizer.shared.constants.MODELS_DIRECTORY_PATH">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>Path(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">./models</span><span class="rst-variable-quote">'</span>)</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="Tranquilizer.shared.constants.WINDOW_HEIGHT">
+    
+  </a>
+  <a name="WINDOW_HEIGHT">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">WINDOW_HEIGHT</span>: <code>int</code> =
+    
+    <a class="headerLink" href="#WINDOW_HEIGHT" title="Tranquilizer.shared.constants.WINDOW_HEIGHT">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>600</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant">
+  
+  
+  <a name="Tranquilizer.shared.constants.WINDOW_WIDTH">
+    
+  </a>
+  <a name="WINDOW_WIDTH">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">WINDOW_WIDTH</span>: <code>int</code> =
+    
+    <a class="headerLink" href="#WINDOW_WIDTH" title="Tranquilizer.shared.constants.WINDOW_WIDTH">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>900</code></pre></td></tr></table>
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for Tranquilizer,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.3.3 at 2024-10-27 21:21:51.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>
