@@ -47,7 +47,7 @@ def __train(name: str | None,
 
     # Setup the dataset.
     dataset = DenoisingDataset(data_dir, noise_level=25, limit=data_limit, gsc=grayscale)
-    dataloader = DataLoader(dataset, batch_size=batch_size, num_workers=4)
+    dataloader = DataLoader(dataset, batch_size=batch_size)
 
     # Start the training routine.
     train_dncnn(
