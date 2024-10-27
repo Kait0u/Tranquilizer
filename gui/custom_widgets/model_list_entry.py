@@ -10,6 +10,10 @@ from shared import constants
 
 
 def _create_gradient_pixmap() -> QPixmap:
+    """
+    Creates a 16x16 RGB gradient icon as a QPixmap.
+    :return: A gradient QPixmap.
+    """
     pixmap = QPixmap(16, 16)
     painter = QPainter(pixmap)
 
@@ -25,7 +29,11 @@ def _create_gradient_pixmap() -> QPixmap:
     return pixmap
 
 def _create_rgb_squares_pixmap() -> QPixmap:
-    # Create a 16x16 pixmap
+    """
+    Creates a 16x16 RGB strips icon as a QPixmap.
+    :return: RGB-Stripes as a QPixmap.
+    """
+
     pixmap = QPixmap(16, 16)
     painter = QPainter(pixmap)
 
@@ -42,12 +50,22 @@ def _create_rgb_squares_pixmap() -> QPixmap:
     return pixmap
 
 class ModelListEntry(QWidget):
-    def __init__(self, model_path, parent=None):
+    """
+    A QListWidget entry widget that is supposed to be a user-friendly representation of a model on a list.
+    """
+    def __init__(self, model_path: str, parent=None):
+        """
+        Initializes the widget with a path to a model, from which the relevant information will be extracted.
+        :param model_path: String path to a model.
+        :param parent: Parent widget.
+        """
         super(ModelListEntry, self).__init__(parent)
 
+        # Extract information from the path to a model.
         self._path_to_model = model_path
         mode, name, epochs, is_checkpoint = ModelListEntry._parse_filename(model_path)
 
+        # Build UI
         layout = QHBoxLayout(self)
 
         icon_label = QLabel()
@@ -76,12 +94,13 @@ class ModelListEntry(QWidget):
         text_layout.setAlignment(Qt.AlignmentFlag.AlignVCenter)
         layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
 
+
     @property
     def model_path(self):
         return self._path_to_model
 
     @staticmethod
-    def _parse_filename(filename) -> tuple[constants.ModelCategory, str, int, bool] | None:
+    def _parse_filename(filename: str) -> tuple[constants.ModelCategory, str, int, bool] | None:
         filename = Path(filename).name
         pattern = r"(gsc|rgb)_(.*)_(\d*)e\.pth"
         pattern_match = re.match(pattern, filename)

@@ -8,6 +8,14 @@ from torchvision.transforms import transforms
 
 
 def denoise(model: nn.Module, input_image: Image.Image, gsc: bool = False) -> tuple[Image.Image, Image.Image]:
+    """
+    Denoises an image using DnCNN model.
+    :param model: The DnCNN model to use for denoising.
+    :param input_image: The image to denoise.
+    :param gsc: Whether to use a split-channel / grayscale not (True) or not (False, default).
+    :return: A tuple consisting of a denoised image and a summary from Matplotlib.
+    """
+
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     if gsc:
@@ -18,6 +26,14 @@ def denoise(model: nn.Module, input_image: Image.Image, gsc: bool = False) -> tu
 # ----------------------------------------------------------------------------------------------------------------------
 
 def __denoise_rgb(model: nn.Module, input_image: Image.Image, device) -> tuple[Image.Image, Image.Image]:
+    """
+    Prepares and denoises an image using DnCNN model (RGB Mode).
+    :param model: The DnCNN model to use for denoising.
+    :param input_image: The image to denoise.
+    :return: A tuple consisting of a denoised image and a summary from Matplotlib.
+    """
+
+    # Ensure RGB
     input_image = input_image.convert("RGB")
     input_tensor = transforms.ToTensor()(input_image).unsqueeze(0)
 
@@ -38,7 +54,7 @@ def __denoise_rgb(model: nn.Module, input_image: Image.Image, device) -> tuple[I
 
     img_denoised = Image.fromarray((denoised_image_np * 255).astype(np.uint8))
 
-    # Create details
+    # Create a Matplotlib summary.
     plt.figure(figsize=(10, 15))
 
     plt.subplot(3, 1, 1)
@@ -67,7 +83,16 @@ def __denoise_rgb(model: nn.Module, input_image: Image.Image, device) -> tuple[I
 
 
 def __denoise_gsc(model: nn.Module, input_image: Image.Image, device) -> tuple[Image.Image, Image.Image]:
+    """
+    Prepares and denoises an image using DnCNN model (Split-Channel / GSC Mode).
+    :param model: The DnCNN model to use for denoising.
+    :param input_image: The image to denoise.
+    :return: A tuple consisting of a denoised image and a summary from Matplotlib.
+    """
+
+    # Ensure RGB
     input_image = input_image.convert("RGB")
+    # Split channels
     input_image_channels = list(map(lambda im: im.convert("L"), [input_image.getchannel(ch) for ch in "RGB"]))
     output_images = []
 
@@ -95,7 +120,7 @@ def __denoise_gsc(model: nn.Module, input_image: Image.Image, device) -> tuple[I
 
         residual_noise_np = residual_image.squeeze().cpu().numpy().clip(0, 1)
 
-        # Create details
+        # Create a Matplotlib summary
         plt.subplot(4, 3, idx)
         plt.title('Original Noisy Image')
         plt.imshow(input_image_np, cmap=cmaps[idx - 1])
@@ -111,6 +136,7 @@ def __denoise_gsc(model: nn.Module, input_image: Image.Image, device) -> tuple[I
         plt.imshow(denoised_image_np, cmap=cmaps[idx - 1])
         plt.axis('off')
 
+    # Merge the channels back
     merged_image_np = np.stack(output_images, axis=-1)
     img_denoised = Image.fromarray((merged_image_np * 255).astype(np.uint8))
 

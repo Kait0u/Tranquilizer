@@ -1,10 +1,11 @@
 from enum import Enum
 from pathlib import Path
 
-from PIL.TiffImagePlugin import COPYRIGHT
-
 
 class ModelCategory(Enum):
+    """
+    Contains the model category (mode) names.
+    """
     RGB = "RGB"
     GSC = "GSC (CHANNEL SPLIT)"
 
@@ -15,6 +16,7 @@ class ModelCategory(Enum):
     def list(cls):
         return list(map(lambda c: c, cls))
 
+APP_NAME = "Tranquilizer"
 COPYRIGHT_MESSAGE = "By Jakub Jaworski (Kait0u), October 2024"
 
 MODELS_DIRECTORY_PATH: Path = Path("./models")
@@ -25,5 +27,8 @@ DIRS_TO_ENSURE = [
     "./models/rgb",
     "./models/gsc",
 ]
+
+WINDOW_WIDTH = 900
+WINDOW_HEIGHT = 600
 
 

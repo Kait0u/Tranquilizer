@@ -4,6 +4,9 @@ from PySide6.QtCore import Qt
 
 
 class AspectRatioLabel(QLabel):
+    """
+    An image label which will attempt to maintain an aspect ratio.
+    """
     def __init__(self, pixmap = None):
         super().__init__()
         self.pixmap = None
